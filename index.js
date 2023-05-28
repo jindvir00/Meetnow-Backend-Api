@@ -28,8 +28,8 @@ app.get( "/login" , async(req, res) => {
     // res.send( "Hello I am live")
 
     try {
-        const  {email} = req.params
-        const user = await User.find(email)
+        // const  {id} = req.params
+        const user = await User.findOne({ email: req.body.email})
         res.status(200).json(user)
     } catch (error) {
         console.log(error);
