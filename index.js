@@ -24,12 +24,12 @@ app.post('/register' , async(req, res) => {
     }
 })
 
-app.get( "/login/:id" , async(req, res) => {
+app.get( "/login/:email" , async(req, res) => {
     // res.send( "Hello I am live")
 
     try {
-        const  {id} = req.params
-        const user = await User.findById(id)
+        const  {email} = req.params
+        const user = await User.find(email)
         res.status(200).json(user)
     } catch (error) {
         console.log(error);
