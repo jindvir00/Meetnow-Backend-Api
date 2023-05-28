@@ -24,7 +24,7 @@ app.post('/register' , async(req, res) => {
     }
 })
 
-app.get( "/login/:email" , async(req, res) => {
+app.get( "/login" , async(req, res) => {
     // res.send( "Hello I am live")
 
     try {
